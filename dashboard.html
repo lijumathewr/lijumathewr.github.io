@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Terraform IDE</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.8/codemirror.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.8/mode/terraform/terraform.min.js"></script>
+</head>
+<body>
+    <div class="dashboard-container">
+        <header>
+            <div class="profile">
+                <img src="user-avatar.jpg" alt="User Avatar" class="avatar">
+                <p>Welcome, User</p>
+                <button onclick="logout()">Logout</button>
+            </div>
+            <div class="terraform-version">
+                <label for="version-select">Select Terraform Version:</label>
+                <select id="version-select">
+                    <option value="1.3.0">1.3.0</option>
+                    <option value="1.2.0">1.2.0</option>
+                    <option value="1.1.9">1.1.9</option>
+                </select>
+            </div>
+        </header>
+        <main>
+            <div class="editor-container">
+                <textarea id="code-editor"># Write your Terraform code here...</textarea>
+            </div>
+            <div class="actions">
+                <button onclick="saveCode()">Save</button>
+                <button onclick="runTerraform()">Run</button>
+            </div>
+            <div class="output">
+                <h2>Output</h2>
+                <pre id="output-display"></pre>
+            </div>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
